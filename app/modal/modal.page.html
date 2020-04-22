@@ -1,0 +1,30 @@
+
+
+<ion-content>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>modal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label position="stacked">Interest Title </ion-label>
+    <ion-input type="text"[(ngModel)]="IntTitle" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Interest Descp </ion-label>
+    <ion-input  type="text" [(ngModel)]="IntDescp"></ion-input>
+  </ion-item>
+
+  <div *ngIf="create" class="ion-padding">
+    <!--<p>{{flag}}</p>-->
+    <ion-button routerLink="/display" expand="block" class="ion-no-margin" (click)="saveCol()" >ADD</ion-button>
+  </div> 
+  <div *ngIf="edit" class="ion-padding">
+    <!--<p>{{flag}}</p>-->
+    <ion-button routerLink="/display" expand="block" class="ion-no-margin" (click)="updateCol()" >Update</ion-button>
+  </div> 
+
+</ion-content>

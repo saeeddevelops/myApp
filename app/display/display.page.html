@@ -1,0 +1,129 @@
+
+  
+
+  <ion-content fullscreen>
+
+    
+        <div class="header">   
+              
+              <div class="title">
+              <img src="https://www.flaticon.com/premium-icon/icons/svg/2351/2351819.svg"> 
+              <h3>My Data</h3>
+              </div>
+               
+        </div>
+    
+     
+
+      <ion-grid>        
+            <ion-row>
+              <ion-col class="left" size="5" >
+                Email
+              </ion-col>
+              <ion-col >
+                {{ (item | async)?.username }}
+              </ion-col>
+            </ion-row>
+            
+            <ion-row>
+              <ion-col class="left" size="5" >
+                Occupation
+              </ion-col>
+              <ion-col >
+                {{ (item | async)?.title }}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col class="left" size="5" >
+                Country
+              </ion-col>
+              <ion-col >
+                {{ (item | async)?.address }}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col class="left" size="5" >
+                City
+              </ion-col>
+              <ion-col >
+                {{ (item | async)?.city }}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col class="left" size="5" >
+                State
+              </ion-col>
+              <ion-col >
+                {{ (item | async)?.state }}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col class="left" size="5" >
+                Zip
+              </ion-col>
+              <ion-col >
+                {{ (item | async)?.zip }}
+              </ion-col>
+            </ion-row>     
+      </ion-grid>
+
+       <!------------------------------------------------------------------------->
+                  <!------------------------------------------------------------------------->
+                  <!------------------------------------------------------------------------->
+                  <!------------------------------------------------------------------------->
+                  <!------------------------------------------------------------------------->
+                    
+      <!--<ion-list>
+        <ion-list-header>
+            <h1>Interests</h1>
+            <ion-button (click)="presentModal()">Add</ion-button>
+        </ion-list-header>
+
+        <ion-item *ngFor="let interest of interests | async">
+            <ion-label>
+              <h2>{{ interest.IntTitle }} </h2>
+              <ion-button  (click)="editModal(interest.Id)">Edit</ion-button>
+               <ion-button (click)="deleteDoc(interest.Id)">Delete</ion-button>
+            </ion-label>
+        </ion-item>
+      </ion-list> -->
+
+        <ion-item lines="none" class="content-item">
+          <ion-label >
+            Interests
+          </ion-label>
+          <ion-icon name="add-circle-outline" (click)="presentModal()" slot="end"></ion-icon>
+        </ion-item>
+
+        <div class="interests" *ngFor="let interest of interests | async">  
+        <ion-card>
+          <ion-item lines="none" >
+            <ion-label class="card">{{ interest.IntTitle }}</ion-label>
+            <ion-icon name="create-outline" slot="end" (click)="editModal(interest.Id)"></ion-icon>
+            <ion-icon name="trash-outline" slot="end" (click)="deleteDoc(interest.Id)"></ion-icon>
+          </ion-item>
+        
+          <ion-card-content>
+            {{ interest.IntDescp }}
+          </ion-card-content>
+        </ion-card>
+      </div>
+         
+
+       <!-- <div *ngIf="interests$ | async; let interests; else loading">
+          <ul>
+            <li *ngFor="let interest of interests">
+              {{ interest.Id }}
+            </li>
+          </ul>
+          <div *ngIf="interests.length === 0">No results, try clearing filters</div>
+        </div> -->
+      
+
+      
+    
+  </ion-content>

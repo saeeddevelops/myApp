@@ -1,0 +1,49 @@
+
+  
+
+  <ion-content fullscreen>
+
+
+    <div class="header">
+      <div class="title">
+        <img src="https://image.flaticon.com/icons/svg/686/686361.svg">  
+      </div>
+      <h5>Signup</h5>
+      
+    </div>
+
+    <div class="body">
+      <ion-list >
+        <ion-item>
+          <ion-icon slot="start" name="person"></ion-icon>
+          <ion-input required type="text"  placeholder="Email"   [(ngModel)]="username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+          <ion-input required type="password"  placeholder="Password"   [(ngModel)]="password"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-icon slot="start" name="woman-outline"></ion-icon>
+          <ion-input type="text" placeholder="Occupation" [(ngModel)]="title"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Address</ion-label>
+          <ion-input placeholder="Country" type="text" [(ngModel)]="address"></ion-input>
+          <ion-input placeholder="City" type="text" [(ngModel)]="city"></ion-input>
+          <ion-input placeholder="State" type="text" [(ngModel)]="state"></ion-input>
+          <ion-input placeholder="Zip Code" type="text" [(ngModel)]="zip"></ion-input>
+        </ion-item>
+        
+        <ion-button routerLink="/login" expand="block" class="ion-no-margin" (click)="register()" >Create account</ion-button>
+        
+      </ion-list>
+
+      <div class="ion-padding">
+        
+      </div>
+    </div>
+    
+  </ion-content>

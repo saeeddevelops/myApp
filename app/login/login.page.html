@@ -1,0 +1,37 @@
+
+ 
+
+  <ion-content fullscreen>
+
+    <div class="header">
+      <div class="title">
+        <img src="https://image.flaticon.com/icons/svg/1828/1828506.svg">  
+      </div>
+      <h3>Login</h3>
+      <p>Enter your credentials</p>
+    </div>
+
+    <div class="body">
+    
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item>
+          <ion-icon slot="start" name="person"></ion-icon>
+          <ion-input required type="text"  placeholder="Email"  [(ngModel)]="username" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+          <ion-input required type="password"  placeholder="Password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-button  expand="block"  class="ion-no-margin"  (click)="login()">Login</ion-button>
+        
+      </ion-list>
+
+    </div>
+
+      
+        
+      
+    
+    </ion-content>
